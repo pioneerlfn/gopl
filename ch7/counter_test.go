@@ -33,8 +33,9 @@ func TestWordCounter(t *testing.T) {
 				log.Fatal(err)
 			}
 		}
+		name := file.Name()
 		file.Close()
-		os.Remove(file.Name())
+		os.Remove(name)
 		var wc WordCounter
 		got, err := wc.Counter(data[:rn])
 		if err != nil {
@@ -71,8 +72,9 @@ func TestLineCounter(t *testing.T) {
 				log.Fatal(err)
 			}
 		}
+		name := file.Name()
 		file.Close()
-		os.Remove(file.Name())
+		os.Remove(name)
 		var lc LineCounter
 		got, err := lc.Counter(data[:rn])
 		if err != nil {
