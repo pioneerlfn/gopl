@@ -17,6 +17,7 @@ func TestWordCounter(t *testing.T) {
 		{"hello, i am learning test in golang!\n", 7},
 	}
 	for _, test := range tests {
+		// practice manipulating files.
 		file, err := ioutil.TempFile(".", "test")
 		if err != nil {
 			log.Fatal(err)
@@ -33,6 +34,7 @@ func TestWordCounter(t *testing.T) {
 				log.Fatal(err)
 			}
 		}
+		// get file name before file is closed.
 		name := file.Name()
 		file.Close()
 		os.Remove(name)
